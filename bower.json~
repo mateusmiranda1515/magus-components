@@ -1,0 +1,20 @@
+{
+  "name": "magus-components",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mateusmiranda1515/magus-components",
+  "authors": [
+    "Mateus Miranda <info.mateusmiranda@gmail.com>"
+  ],
+  "description": "Components angular Magus Web",
+  "keywords": [
+    "magus-components"
+  ],
+  "license": "LGPT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
