@@ -13,6 +13,5 @@ function MagusAddress(){
 }
 
 
-
 angular.module('magus.directives', [])
 		.directive('magusAddress', MagusAddress);
