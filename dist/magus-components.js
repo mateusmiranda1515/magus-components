@@ -28,6 +28,7 @@ function MagusAlert(){
                 link: function (scope, elm, attrs) {
                     //VALUES DEFAULT
                     scope.type = scope.type || 'none';
+                    scope.confirmation = scope.confirmation || false;
                     scope.confirmButtonText = scope.confirmButtonText || 'Yes, confirm!';
                     scope.cancelButtonText = scope.cancelButtonText || 'No, cancel plx!';
                     
