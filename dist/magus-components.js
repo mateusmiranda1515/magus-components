@@ -3,7 +3,7 @@
 function MagusAddress(){
 	return{
 		restrict: 'E',
-		template: '<h1>Aqui vem o MagusAddress</h1>',
+		template: '',
 		scope: {
 
 		},
