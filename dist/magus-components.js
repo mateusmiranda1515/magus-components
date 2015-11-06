@@ -13,6 +13,35 @@ function MagusAddress(){
 	}
 }
 
+
+function MagusName(){
+	return{
+		restrict: 'E',
+		template: '<input class="form-control" ng-model="value" name="value" /> ',
+		require: '^ngModel',
+		scope: {
+			value: '='
+		},
+		link: function(scope,elm, attrs, ctrl){
+			var wordsToIgnore = ["DOS", "DAS", "de", "do", "dos", "das", "Dos", "De", "Das", "Do"], minLength = 2;
+			var getWords = function (str) {
+        return str.match(/\S+\s*/g);
+    	}
+			var words = getWords(scope.value);
+
+			words.forEach(function(word, index){
+					if(wordsToIgnore.indexOf(word.trim()) === -1 && word.trim().length > minLength){
+						words[index] = words[index].charAt(0).toUpperCase() + words[index].slice(1).toLowerCase();
+					}else{
+						words[index] = words[index].toLowerCase();
+					}
+			});
+
+		}
+	}
+}
+
+
 function MagusAlert(){
 	return{
           restrict: 'E',
@@ -60,7 +89,8 @@ function MagusAlert(){
 
 angular.module('magus.directives', [])
 		.directive('magusAddress', MagusAddress)
-		.directive('magusAlert', MagusAlert);
+		.directive('magusAlert', MagusAlert)
+		.directive('magusName', MagusName);
 
 
 
