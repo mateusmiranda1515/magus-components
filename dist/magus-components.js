@@ -18,7 +18,6 @@ function MagusName(){
 	return{
 		restrict: 'E',
 		template: '<input class="form-control" ng-model="value" name="value" /> ',
-		require: '^ngModel',
 		scope: {
 			value: '='
 		},
@@ -36,7 +35,7 @@ function MagusName(){
 						words[index] = words[index].toLowerCase();
 					}
 			});
-
+			scope.value = words.join("");
 		}
 	}
 }
