@@ -104,6 +104,27 @@ function MagusAlert() {
     };
 }
 
+function MagusCPF(){
+  return {
+    restrict: 'E',
+    template: '<input type="text" class="form-control" ng-model="value">',
+    require: '?ngModel'
+    scope: {
+
+    },
+    link: function(scope,elm,attrs,ngModel){
+        scope.value = ngModel.$viewValue;
+
+        function maskCPF(){
+          console.log('opa bom');
+        }
+
+        elm.bind('keyup', maskCPF);
+
+    }
+  }
+}
+
 
 angular.module('magus.directives', [])
         .directive('magusAddress', MagusAddress)
