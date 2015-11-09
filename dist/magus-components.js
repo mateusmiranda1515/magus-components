@@ -107,15 +107,15 @@ function MagusAlert() {
 function MagusCPF(){
   return {
     restrict: 'E',
-    template: '<input type="text" class="form-control" ng-model="value">',
-    require: '?ngModel'
+    template: '<input type="text" class="form-control" ng-model="value" ng-keyup="maskCPF(value)">',
+    require: '?ngModel',
     scope: {
 
     },
     link: function(scope,elm,attrs,ngModel){
         scope.value = ngModel.$viewValue;
 
-        function maskCPF(){
+        scope.maskCPF = function(){
           console.log('opa bom');
         }
 
@@ -129,7 +129,8 @@ function MagusCPF(){
 angular.module('magus.directives', [])
         .directive('magusAddress', MagusAddress)
         .directive('magusAlert', MagusAlert)
-        .directive('magusName', MagusName);
+        .directive('magusName', MagusName)
+        .directive('magusCpf', MagusCPF);
 
 
 
